@@ -4,7 +4,7 @@ package.name = marklv
 package.domain = org.marklv
 source.dir = .
 source.include_exts = py,png,jpg,ttf,json
-source.exclude_dirs = config,.git,.github,bin,venv,__pycache__
+source.exclude_dirs = .git,.github,bin,venv,__pycache__
 source.exclude_patterns = desktop.py
 version = 1.0.0
 requirements = python3,kivy==2.3.0,requests,urllib3,idna,charset-normalizer,certifi,plyer,pyjnius
