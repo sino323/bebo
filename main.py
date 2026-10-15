@@ -114,4 +114,15 @@ class MarkApp(App):
             Clock.schedule_once(lambda dt: setattr(self.ring, "state", "idle"), min(len(r) / 14, 10))
 
 if __name__ == "__main__":
-    MarkApp().run()
+    try:
+        MarkApp().run()
+    except Exception:
+        import traceback
+        err = traceback.format_exc()
+
+        class ErrApp(App):
+            def build(self):
+                return Label(text=err, font_size="11sp", halign="left",
+                             valign="top", text_size=(Window.width - 20, None))
+        ErrApp().run()
+        
